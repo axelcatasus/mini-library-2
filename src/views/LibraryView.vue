@@ -1,8 +1,12 @@
 <template>
   <div class="home">
-    <router-link :to="'/book/' + book.id" v-for="book in books" :key="book.id">
-      <Book :book="book"/>
-    </router-link>
+    <input type="text" v-model="search">
+    <router-link to="/readinglist/"><button>Show reading list</button></router-link>
+    <div class="grid">
+      <router-link :to="'/book/' + book.id" v-for="book in books" :key="book.id">
+        <Book :book="book"/>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -10,22 +14,31 @@
 import Book from '../components/Book.vue'
 
 export default {
+  data(){return{
+    search: ''
+  }},
   components: {Book},
   computed: {
     books(){
-       return this.$store.state.books
+      if(this.search.length == 0){
+        return this.$store.state.books
+      }else {
+       return this.$store.state.books.filter(book => book.title.toLowerCase().includes(this.search.toLowerCase()))
+      }
     }
   }
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 
 a
   text-decoration: none
   color: white
 
-.home
+.grid
+  margin-top: 3rem
+  place-items: center
   display: grid
   grid-template-rows: 1fr 1fr 1fr 1fr
   grid-template-columns: 1fr 1fr 1fr 1fr
