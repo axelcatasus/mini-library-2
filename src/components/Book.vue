@@ -27,7 +27,7 @@ article
 .beeg
   height: 27rem
   width: 18rem
-  background: purple
+  background: red
 
 
 </style>
