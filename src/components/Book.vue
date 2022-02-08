@@ -15,19 +15,23 @@ export default {
 
 <style lang="sass">
 
+h2
+  font-size: 1.4rem
+
 article
-  background: tomato
+  background: linear-gradient(.25turn, green, lightgreen)
   height: 18rem
   width: 12rem
   padding: 1rem
   display: flex
   flex-direction: column
   justify-content: flex-end
+  border-radius: .2rem
 
 .beeg
-  height: 27rem
-  width: 18rem
-  background: red
+  min-height: 27rem
+  min-width: 18rem
+  background: radial-gradient(red, gold)
 
 
 </style>
