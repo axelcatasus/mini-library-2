@@ -19,7 +19,8 @@ h2
   font-size: 1.4rem
 
 article
-  background: linear-gradient(.25turn, green, lightgreen)
+  // background: linear-gradient(.25turn, green, lightgreen)
+  background: red
   height: 18rem
   width: 12rem
   padding: 1rem
