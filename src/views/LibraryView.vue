@@ -4,7 +4,7 @@
     <router-link to="/readinglist/"><button>Show reading list</button></router-link>
     <div class="grid">
       <router-link :to="'/book/' + book.id" v-for="book in books" :key="book.id">
-        <Book :book="book"/>
+        <Book :book="book" :style="book"/>
       </router-link>
     </div>
   </div>
