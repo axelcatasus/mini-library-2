@@ -1,7 +1,7 @@
 <template>
   <div class="single-book-view">
     <router-link to='/'>🔙</router-link>
-    <Book :book="book" :class='{beeg}'/>
+    <Book :book="book" :class='{beeg}' :style="book"/>
     <div class="single-book-info">
       <h1>{{book.title}}</h1>
       <h2>by {{book.author}}</h2>
